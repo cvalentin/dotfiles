@@ -35,7 +35,7 @@ inoremap jk <Esc>
 " NeoBundle ==================================================================
 if has('vim_starting')
     set nocompatible               
-    set runtimepath+=/Users/carlo/.vim/bundle/neobundle.vim/
+    set runtimepath+=$HOME/.vim/bundle/neobundle.vim/
 endif
 
 call neobundle#begin(expand('/Users/carlo/.vim/bundle'))
