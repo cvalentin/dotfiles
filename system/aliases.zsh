@@ -15,4 +15,13 @@ if [[ `uname -s ` == 'Darwin' ]]; then
 	alias hda="hdiutil attach"
 	alias hdd="hdiutil detach"
 	alias hdr="diskutil rename"
+
+    alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+    
+    
 fi
+
+function compute() {
+      while true; do head -n 100 /dev/urandom; sleep 0.1; done \
+      | hexdump -C | grep "ca fe"
+}

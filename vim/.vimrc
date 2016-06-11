@@ -7,6 +7,7 @@ syntax enable
 set background=dark
 set smartindent
 set expandtab
+set backspace=indent,eol,start
 
 " Navigation ================================================================
 nnoremap <C-J> <C-W><C-J>
@@ -32,42 +33,64 @@ set spell
 " Shortcuts ==================================================================
 inoremap jk <Esc>
 
-" NeoBundle ==================================================================
-if has('vim_starting')
-    set nocompatible               
-    set runtimepath+=$HOME/.vim/bundle/neobundle.vim/
-endif
+" dein.vm ====================================================================
+set nocompatible
 
-call neobundle#begin(expand('/Users/carlo/.vim/bundle'))
-NeoBundleFetch 'Shougo/neobundle.vim'
+set runtimepath^=~/.dotfiles/submodules/vim/dein.vim
 
-" NeoBundle Bundles ==========================================================
-NeoBundle 'git://github.com/altercation/vim-colors-solarized.git'
-NeoBundle 'christoomey/vim-tmux-navigator'
-NeoBundle 'wincent/command-t'
-NeoBundle 'thinca/vim-ref'
+call dein#begin('~/.vim/modules')
+
+call dein#add('Shougo/dein.vim')
+call dein#add('christoomey/vim-tmux-navigator')
+call dein#add('altercation/vim-colors-solarized')
 
 " NERD Tree ==================================================================
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'jistr/vim-nerdtree-tabs'
+call dein#add('scrooloose/nerdtree')
+call dein#add('jistr/vim-nerdtree-tabs')
 
-map <C-e> <plug>NERDTreeTabsToggle<CR>
+map <C-e> :NERDTreeTabsToggle<CR>
 
 let NERDTreeIgnore=['\.dSYM','\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr', 'node_modules']
 let NERDTreeShowHidden=1
 
-" NeoBundle End ============================================================== 
-call neobundle#end()
+" Ctrl+P =====================================================================
+
+call dein#add('ctrlpvim/ctrlp.vim')
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+" dein.vm End ================================================================ 
+call dein#end()
 filetype plugin indent on
-NeoBundleCheck
+if dein#check_install()
+	call dein#install()
+endif
 
 " Solarized Vim ==============================================================
 colorscheme solarized
 
 " Powerline ================================================================== 
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+
+silent!	python3 from powerline.vim import setup as powerline_setup
+silent!	python3 powerline_setup()
+silent!	python3 del powerline_setup
+silent!	python from powerline.vim import setup as powerline_setup
+silent!	python powerline_setup()
+silent!	python del powerline_setup
 
 set guifont=Inconsolata\ for\ Powerline:h15
 set laststatus=2
