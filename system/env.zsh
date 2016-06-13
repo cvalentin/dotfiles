@@ -12,4 +12,6 @@ if [[ `uname -s ` == 'Darwin' ]]; then
 
 	export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
 	export GOPATH="${HOME}/Documents/workspace/go"
+
+    export PATH=$GOPATH/bin:$PATH
 fi
