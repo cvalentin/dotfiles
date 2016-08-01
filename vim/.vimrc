@@ -43,6 +43,7 @@ call dein#begin('~/.vim/modules')
 call dein#add('Shougo/dein.vim')
 call dein#add('christoomey/vim-tmux-navigator')
 call dein#add('altercation/vim-colors-solarized')
+call dein#add('rust-lang/rust.vim')
 
 " NERD Tree ==================================================================
 call dein#add('scrooloose/nerdtree')
