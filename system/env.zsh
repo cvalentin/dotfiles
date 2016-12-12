@@ -10,8 +10,17 @@ if [[ `uname -s ` == 'Darwin' ]]; then
 	#Moar Path
 	export PATH=~/Library/Android/sdk/platform-tools:/usr/local/MacGPG2/bin:/usr/texbin:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin:$PATH
 
+    #Homebrew
 	export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
-	export GOPATH="${HOME}/Documents/workspace/go"
 
-    export PATH=$GOPATH/bin:$PATH
+    #Go specific stuff, need to generalize this better
+	export GOPATH="${HOME}/Documents/workspace/go"
+    export GOROOT="/usr/local/opt/go"
+    export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+    #Stop OSX from prompting me for a password
+    #export SSH_AUTH_SOCK=
+    
+    #Rust binding
+    export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
 fi

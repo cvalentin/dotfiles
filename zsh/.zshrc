@@ -6,6 +6,7 @@ antigen use oh-my-zsh
 antigen bundles <<EOBUNDLES
 
     urbainvaes/fzf-marks
+    cvalentin/fzf-z
     zsh-users/zsh-syntax-highlighting
     zsh-users/zsh-completions src
     djui/alias-tips
