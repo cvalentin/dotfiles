@@ -11,13 +11,12 @@ if [[ `uname -s ` == 'Darwin' ]]; then
 	command -v sha1sum > /dev/null || alias sha1sum="shasum"
 
 	# Use stronger encryption with hdiutil
-	alias hdc="hdiutil create -size 1g -encryption AES-256 -type SPARSE -fs HFS+"
+	alias hdc="hdiutil create -size 5g -encryption AES-256 -type SPARSE -fs HFS+"
 	alias hda="hdiutil attach"
 	alias hdd="hdiutil detach"
 	alias hdr="diskutil rename"
 
     alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-    
     
 fi
 

@@ -8,7 +8,7 @@ export EDITOR='vim'
 #OS X
 if [[ `uname -s ` == 'Darwin' ]]; then
 	#Moar Path
-	export PATH=/usr/local/MacGPG2/bin:/usr/texbin:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin:$PATH
+	export PATH=~/Library/Android/sdk/platform-tools:/usr/local/MacGPG2/bin:/usr/texbin:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin:$PATH
 
 	export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
 	export GOPATH="${HOME}/Documents/workspace/go"
