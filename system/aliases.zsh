@@ -20,17 +20,6 @@ if [[ `uname -s ` == 'Darwin' ]]; then
     
 fi
 
-#TaskWarrior
-alias in='task add +in'
-alias next='task +in'
-
-tickle () {
-    deadline=$1
-    shift
-    in +tickle wait:$deadline $@
-}
-alias tick=tickle
-
 function compute() {
     while true; do head -n 100 /dev/urandom; sleep 0.1; done \
      | hexdump -C | grep "ca fe"

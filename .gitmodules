@@ -3,4 +3,4 @@
 	url = https://github.com/zsh-users/antigen
 [submodule "submodules/vim/dein.vim"]
 	path = submodules/vim/dein.vim
-	url = git@github.com:Shougo/dein.vim.git
+	url = https://github.com/Shougo/dein.vim
