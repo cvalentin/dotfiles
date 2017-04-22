@@ -5,6 +5,8 @@ export PATH=/usr/local/bin:~/bin:/usr/bin:/bin:/usr/sbin:/usr/local/sbin:/sbin:/
 export LANG=en_US.UTF-8
 export EDITOR='vim'
 
+#Vagrant
+
 #OS X
 if [[ `uname -s ` == 'Darwin' ]]; then
 	#Moar Path
@@ -23,4 +25,12 @@ if [[ `uname -s ` == 'Darwin' ]]; then
     
     #Rust binding
     export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
+
+    export ANDROID_HOME=~/Library/Android/sdk
+    export PATH=${PATH}:${ANDROID_HOME}/tools
+    export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+    
+    #Vagrant
+    export VAGRANT_VMWARE_CLONE_DIRECTORY=~/Documents/vagrant/vm
+
 fi
