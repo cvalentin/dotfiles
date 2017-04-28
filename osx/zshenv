@@ -1,0 +1,20 @@
+#Moar Path
+export PATH=~/Library/Android/sdk/platform-tools:/usr/local/MacGPG2/bin:/usr/texbin:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin:/usr/local/opt/go/libexec/bin:$PATH
+
+#Homebrew
+export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
+
+#Go specific stuff, need to generalize this better
+export GOPATH="${HOME}/Documents/workspace/go"
+export GOROOT="/usr/local/opt/go"
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+#Rust binding
+export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
+
+export ANDROID_HOME=~/Library/Android/sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+
+#Vagrant
+export VAGRANT_VMWARE_CLONE_DIRECTORY=~/Documents/vagrant/vm
